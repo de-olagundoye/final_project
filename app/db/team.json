@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "name": "Grant Jensen",
+    "img-one": "public/img/skaters.grant1.jpg"
+  },
+
+  {
+    "id": 2,
+    "name": "Austin Amelio",
+    "img-one": "public/img/skaters.austin1.jpg"
+  }
+]
