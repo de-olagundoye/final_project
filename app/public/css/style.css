@@ -1,4 +1,4 @@
-img {
+.user-select {
     user-drag: none; 
     user-select: none;
     -moz-user-select: none;
@@ -6,6 +6,12 @@ img {
     -webkit-user-select: none;
     -ms-user-select: none;
 }
+
+.about {
+    margin: 0 auto;
+    width: 50%;
+}
+
 
 #background {
     position: fixed;
@@ -23,17 +29,8 @@ img {
     background-color: black;
 }
 
-.about {
-    margin: 0 auto;
-    width: 50%;
-}
-
-.shop-pic {
+#shop-pic {
     display: block;
     margin: 0 auto;
     width: 70%;
-}
-
-.container h1 {
-    color: white;
 }

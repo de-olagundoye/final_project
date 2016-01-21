@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="NoComplyApp">
+<head>
+  <title>NO-COMPLY</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/team_controller.js"></script>  
+</head>
+<body>
+  <div ng-controller="TeamController">
+    <ul style="list-style: none">
+      <a ng-repeat="member in team" href="#/{{member.name}}" ng-click="show(member._id)">{{member.name}}</a>
+    </ul>
+      <div>
+        <h1>{{thisMember.name}}</h1>
+        <img src="img/team/{{thisMember.img}}"></img>
+      </div>
+  </div>
+</body>
+</html>
