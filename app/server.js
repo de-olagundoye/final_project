@@ -2,11 +2,13 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var Team = require('./models/team')
+var methodOverride = require('method-override')
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
+app.use(methodOverride('_method'))
 
 app.get('/', function (req, res){
   res.render('landing')
@@ -38,9 +40,7 @@ app.get('/team/:id', function (req, res){
 });
 
 app.patch('/team/:id', function (req, res){
-  Team.findOneAndUpdate({_id: req.params.id}, {$set: {name: req.body.name}}, {$push: {img: req.body.img}}, function (err){
-
-    console.log(req)
+  Team.findOneAndUpdate({_id: req.params.id}, {$set: {name: req.body.team.name}}, {$addToSet: {img: req.body.team.img}}, function (err){
   })
 })
 
