@@ -1,16 +1,16 @@
 [
   {
     "name": "Grant Jensen",
-    "img": "grant1.jpg"
+    "img": ["grant1.jpg"]
   },
 
   {
     "name": "Austin Amelio",
-    "img": "austin1.jpg"
+    "img": ["austin1.jpg"]
   },
 
   {
     "name": "Elias Bingham",
-    "img": "elias1.jpg"
+    "img": ["elias1.jpg"]
   }
 ]

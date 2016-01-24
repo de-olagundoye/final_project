@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="NoComplyApp">
+<head>
+  <title>NO-COMPLY</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/team_controller.js"></script>  
+</head>
+<body>
+  <div ng-controller="TeamController">
+    <select ng-model="selection">          
+      <option value="add">Add A New Person</option>
+      <option value="see">See & Edit Team</option>
+    </select></p>
+
+    <div class="animate-switch-container" ng-switch on="selection">
+      <div class="animate-switch" ng-switch-when="add">
+        <div id="newForm">
+        <form method="POST" action="/team">
+          <label for="team[name]"><strong>Name:</strong></label>
+          <input type="text" id="name" name="team[name]"> <br>
+          <label for="team[img]"><strong>Image:</strong></label>
+          <input type="file" name="team[img]" accept="image/*" multiple><br><br>
+          <button>Submit</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="animate-switch" ng-switch-default>
+        <p> Search: <input ng-model="query"></p>
+        <div ng-repeat="member in team | filter:query | orderBy: 'name'">
+          <ul style="list-style: none">
+            <li>
+              <a href="#/{{member.name}}" ng-click="show(member._id)">{{member.name}}</a>
+            </li>
+            <li>
+              <button ng-click="editFormOpen = !editFormOpen">Edit</button>     
+              <button ng-click="delete(member)">Delete</button>
+            </li><br>
+              <div ng-show="editFormOpen" id-"editForm">
+                <form method="PATCH" action="/team">
+                  <label for="team[name]"><strong>Name:</strong></label>
+                  <input type="text" id="name" name="team[name]"> <br>
+                  <label for="team[img]"><strong>Add Images:</strong></label>
+                  <input type="file" name="team[img]" accept="image/*" multiple><br><br>
+                  <button>Submit</button>
+                </form>
+              </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
