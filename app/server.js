@@ -1,14 +1,47 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var Team = require('./models/team')
-var methodOverride = require('method-override')
+var Team = require('./models/team');
+var Admin = require('./models/admin');
+var methodOverride = require('method-override');
+var session = require('express-session');
+var bcrypt = require('bcrypt');
+var MongoStore = require('connect-mongo')(session);
+
+
+var authenticateUser = function(email, password, callback) {
+  Admin.findOne({email: email}, function(err, data) {
+    if (err) {throw err;}
+    bcrypt.compare(password, data.password_digest, function(err, passwordsMatch) {
+      if (passwordsMatch) {
+        callback(data);
+        console.log('authenticated')
+      } else {
+        callback(false);
+        console.log('NOT authenticated')
+      }
+    })
+  });
+};
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
-app.use(methodOverride('_method'))
+app.use(methodOverride('_method'));
+
+
+var mongoUrl = "mongodb://localhost:27017/myDb"
+
+app.use(session({
+  secret: 'charon',
+  store: new MongoStore({ url: mongoUrl })
+}))
+
+app.use(function(req, res, next) {
+  // console.log(req.method, req.url, '\n body:', req.body, '\n session:', req.session);
+  next();
+});
 
 app.get('/', function (req, res){
   res.render('landing')
@@ -17,6 +50,20 @@ app.get('/', function (req, res){
 app.get('/about', function (req, res){
   res.render('about')
 })
+
+app.get('/login', function (req, res){
+  res.render('login')
+})
+
+app.post('/login', function(req, res) {
+  authenticateUser(req.body.email, req.body.password, function(admin) {
+    if (admin) {
+      req.session.email = admin.email;
+      req.session.password = admin.password_digest;
+      }
+    res.redirect('/admin');
+  });
+});
 
 app.get('/team.json', function (req, res){
   Team.find({}, function (err, results){
@@ -61,9 +108,25 @@ app.post('/team', function (req, res){
 });
 
 app.get('/admin', function (req, res){
-  Team.find({}, function (err, results){
-    res.render('dashboard')
-  })
+  var loggedIn = req.session.email
+  if (loggedIn) {
+    console.log('loggedIn')
+
+    Team.find({}, function (err, results){
+      res.render('dashboard')
+    })
+  } else {
+    console.log('NOT loggedIn')
+    res.redirect('/')
+  }
 });
+
+app.get('/logout', function(req, res) {
+  req.session.email = null;
+  req.session.password = null;
+  req.session.id = null;
+  console.log(req.session.email)
+  res.redirect('/');
+})
 
 app.listen(process.env.PORT || 9292);
