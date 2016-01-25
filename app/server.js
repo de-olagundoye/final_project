@@ -40,7 +40,9 @@ app.get('/team/:id', function (req, res){
 });
 
 app.patch('/team/:id', function (req, res){
+  console.log(req.body.team.img)
   Team.findOneAndUpdate({_id: req.params.id}, {$set: {name: req.body.team.name}}, {$addToSet: {img: req.body.team.img}}, function (err){
+    res.redirect('/admin')
   })
 })
 

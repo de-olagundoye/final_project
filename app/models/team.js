@@ -4,7 +4,7 @@ mongoose.connect('mongodb://localhost:27017/myDb');
 var Schema = mongoose.Schema
 var teamSchema = new Schema({
     name: String, 
-    img:  String
+    img:  Array
 });
 
 var Team = mongoose.model('Team', teamSchema);

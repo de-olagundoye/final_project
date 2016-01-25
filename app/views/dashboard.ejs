@@ -42,7 +42,7 @@
               <div ng-show="editFormOpen" id="editForm">
                 <form method="POST" action="{{'/team/' + member._id + '?_method=PATCH'}}">
                   <label for="team[name]"><strong>Name:</strong></label>
-                  <input type="text" id="name" name="team[name]"> <br>
+                  <input type="text" id="name" name="team[name]" value="{{member.name}}"> <br>
                   <label for="team[img]"><strong>Add Images:</strong></label>
                   <input type="file" name="team[img]" accept="image/*" multiple><br><br>
                   <input type="hidden" name="team[_id]" value="{{member._id}}">
