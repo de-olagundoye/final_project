@@ -4,7 +4,7 @@ var bcrypt   = require('bcrypt');
 var Schema = mongoose.Schema
 var adminSchema = new Schema({
     email: String, 
-    password_digest:  String
+    password_digest: String
 });
 
 var Admin = mongoose.model('Admin', adminSchema);
