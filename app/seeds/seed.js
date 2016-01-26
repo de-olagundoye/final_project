@@ -1,7 +1,7 @@
 var Team = require('../models/team.js');
 var Admin = require('../models/admin.js');
-var teamData = require('./team_seeds.json');
-var adminData = require('./admin_seeds.json');
+var teamData = require('./team.json');
+var adminData = require('./admin.json');
 
 teamData.forEach(function (row){
   var team = new Team(row)

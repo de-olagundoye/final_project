@@ -4,19 +4,30 @@
   <title>NO-COMPLY</title>
   <link rel="stylesheet" href="css/style.css">
 
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/team_controller.js"></script>  
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/team_controller.js"></script>  
 </head>
 <body>
+  <img id="logo" src="img/logos/logo_black.png" class="user-select">
   <div ng-controller="TeamController">
-    <ul style="list-style: none">
-      <a ng-repeat="member in team" href="#/{{member.name}}" ng-click="show(member._id)">{{member.name}}</a>
+  <div ng-include="'/partials/header.html'"></div>
+  <div id="wrapper">
+    <div class="col1">
+    <ul ng-repeat="member in team" style="list-style: none">
+      <li><a href="#/{{member.name}}" ng-click="show(member._id)">{{member.name}}</a></li>
     </ul>
-      <div>
+
+    </div>
+
         <h1>{{thisMember.name}}</h1>
-        <img src="img/team/{{thisMember.img}}"></img>
-      </div>
+
+        <div ng-repeat="image in imageArray" class="col-lg-3 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#">
+              <img class="img-responsive" src="/img/team/{{image.src}}" alt="">
+            </a>
+        </div>
+    </div>
   </div>
 </body>
 </html>
