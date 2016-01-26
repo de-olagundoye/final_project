@@ -3,6 +3,7 @@
 <head>
   <title>NO-COMPLY</title>
   <link rel="stylesheet" href="css/style.css">
+  <link href="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.css" type="text/css" rel="stylesheet" />
 
   <script src="/bower_components/angular/angular.js"></script>
   <script src="/js/main.js"></script>
@@ -20,11 +21,13 @@
     </div class="col3">
       <h1>{{thisMember.name}}</h1>
         <div ng-repeat="image in imageArray" class="col-lg-3 col-md-4 col-xs-6 thumb">
-          <a class="thumbnail" href="#">
+          <a class="thumbnail" href="#" >
             <img class="img-responsive" src="/img/team/{{image.src}}" alt="">
           </a>
         </div>
     </div>
   </div>
+<script src="//code.jquery.com/jquery-latest.js"></script>
+<script src="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
