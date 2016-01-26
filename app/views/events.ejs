@@ -3,8 +3,11 @@
 <head>
   <title>NO-COMPLY</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="bower_components/lightbox2/dist/css/lightbox.css">
 
   <script src="/bower_components/angular/angular.js"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="/js/main.js"></script>
   <script src="/js/events_controller.js"></script>  
 </head>
@@ -15,10 +18,9 @@
   <br>
   <div id="wrapper">
     <div ng-repeat="event in events" class="col-lg-3 col-md-4 col-xs-6 thumb">
-      <a class="thumbnail" href="#">
-        <img class="img-responsive" src="/img/events/{{event.img_src}}" alt="">
-        </a>
-      </div>
+      <a href="/img/events/{{event.img_src}}" data-lightbox="team"><img class="img-responsive thumbnail" src="/img/events/{{event.img_src}}" alt=""></a>
+    </div>
   </div>
+  <script src="bower_components/lightbox2/dist/js/lightbox.js"></script>
 </body>
 </html>
