@@ -13,6 +13,7 @@ User Stories
     -As a logged in admin, a user can upload photo 
 
 MVP's
+
     - Landing page
 
     - Single bio page
@@ -22,6 +23,7 @@ MVP's
     - Pics & Vids
 
 Technologies Used
+
     -Mongoose
 
     -Express
