@@ -1,8 +1,9 @@
 # final_project
+https://no-comply.herokuapp.com
 
 User Stories
 
-    -Users can read bios and see photos/videos of their favorite athletes
+    -Users can see photos/videos of their favorite NC skaters
 
     -Users can view company events
 
@@ -31,3 +32,9 @@ Technologies Used
     -Angular
 
     -Node
+
+Wireframes
+![wf pic1](readme/wf1.png)
+![wf pic2](readme/wf2.png)
+![wf pic3](readme/wf3.png)
+![wf pic4](readme/wf4.png)
