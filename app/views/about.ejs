@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en" ng-app="NoComplyApp">
 <head>
   <title>NO-COMPLY</title>
@@ -9,10 +8,65 @@
   <script src="/js/team_controller.js"></script>  
 </head>
 <body>
+  <div ng-controller="TeamController">
   <div ng-include="'/partials/header.html'"></div>
-  <div class="about">
-    <h3>Shop Info</h3>
-    <img src="img/shop/shop1.jpg" id="shop-pic" class="user-select">
+
+    <div id="wrapper">
+      <div class="col1">
+        <ul style="list-style: none">
+          <li><a href="#" ng-click="page='location'">Store Location</a></li>
+          <li><a href="#" ng-click="page='hours'">Hours</a></li>
+          <li><a href="#" ng-click="page='contact'">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="about">
+     <div ng-switch on="page">
+        <div ng-switch-default>
+          <h1>Location</h1>
+          <div class="about">
+            <img src="img/shop/shop2.jpg" id="shop-pic" class="user-select">
+          </div>
+          <br>
+          <div>
+            <h3>812 W 12th St</h3>
+            <h3>Austin, TX 78701</h3>
+         </div>
+        </div>
+        <div ng-switch-when="hours">
+           <h1>Hours</h1>
+           <br>
+            <div>
+              <img src="img/shop/shop3.jpg" id="shop-pic" class="user-select">
+            </div>
+            <br>
+            <div>       
+              <p><strong>Monday:</strong> 11:00 am - 7:00 pm</p> 
+              <p><strong>Tuesday:</strong>  11:00 am - 7:00 pm</p>
+              <p><strong>Wednesday:</strong>  11:00 am - 7:00 pm</p> 
+              <p><strong>Thursday:</strong>  11:00 am - 7:00 pm</p> 
+              <p><strong>Friday:</strong>  11:00 am - 7:00 pm </p>
+              <p><strong>Saturday:</strong>  10:00 am - 7:00 pm</p>
+              <p><strong>Sunday:</strong>  12:00 am - 6:00 pm</p>
+            </div>
+        </div>
+
+        <div ng-switch-when="contact">
+           <h1>Contact</h1>           
+          <div>
+            <img src="img/shop/shop1.jpg" id="shop-pic" class="user-select">
+          </div>
+          <br>
+          <div>
+            <p>(512) 804-0472</p>
+            <a href="https://www.facebook.com/nocomplyatx/" target="_blank"><img id="icon" src="img/icons/facebook.png" class="user-select"></img></a>
+            <a href="https://twitter.com/nocomplyatx" target="_blank"><img id="icon" src="img/icons/twitter.png" class="user-select"></img></a>
+            <a href="https://www.instagram.com/nocomplyatx/" target="_blank"><img id="icon" src="img/icons/instagram.png" class="user-select"></img></a>
+          </div>
+     </div>
+  </div>
+
+    </div>
   </div>
 </body>
 </html>

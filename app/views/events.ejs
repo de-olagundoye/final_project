@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="NoComplyApp">
+<head>
+  <title>NO-COMPLY</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/events_controller.js"></script>  
+</head>
+<body>
+  <div ng-controller="EventsController"> 
+  <div ng-include="'/partials/header.html'"></div>
+  <h1>Shop Events</h1>
+  <br>
+  <div id="wrapper">
+    <div>
+      <div ng-repeat="event in events" class="col-lg-3 col-md-4 col-xs-6 thumb">
+        <a class="thumbnail" href="#">
+          <img class="img-responsive" src="/img/events/{{event.img_src}}" alt="">
+         </a>
+       </div>
+    </div>
+  </div>
+</body>
+</html>

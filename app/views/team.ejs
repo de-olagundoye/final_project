@@ -9,16 +9,15 @@
   <script src="/js/team_controller.js"></script>  
 </head>
 <body>
-  <img id="logo" src="img/logos/logo_black.png" class="user-select">
   <div ng-controller="TeamController">
   <div ng-include="'/partials/header.html'"></div>
   <div id="wrapper">
     <div class="col1">
-    <ul ng-repeat="member in team" style="list-style: none">
+    <ul style="list-style: none" ng-repeat="member in team | orderBy: 'name'" >
       <li><a href="#/{{member.name}}" ng-click="show(member._id)">{{member.name}}</a></li>
     </ul>
 
-    </div>
+    </div class="col3">
 
         <h1>{{thisMember.name}}</h1>
 

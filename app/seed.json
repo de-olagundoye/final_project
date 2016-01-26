@@ -1,5 +1,5 @@
 {
-	"undefined": "mongodb://localhost:27017/myDb",
+	"undefined": "mongodb://heroku_030635dr:qmfeb33h7jd59e4tpkm2srtfs9@ds049945.mongolab.com:49945/heroku_030635dr",
   "dev": "localhost/DEV_DB_NAME",
 	"prod": "localhost/PROD_DB_NAME"
 }

@@ -6,6 +6,7 @@ mongoose.connect(process.env.MONGOLAB_URI || "mongodb://localhost:27017/myDb")
 
 var Team = require('./models/team');
 var Admin = require('./models/admin');
+var Events = require('./models/events');
 var session = require('express-session');
 var bcrypt = require('bcrypt');
 var MongoStore = require('connect-mongo')(session);
@@ -66,6 +67,20 @@ app.get('/team', function (req, res){
     res.render('team')
   })
 });
+
+app.get('/events', function (req, res){
+  Team.find({}, function (err, results){
+    console.log(results)
+    res.render('events')
+  })
+});
+
+app.get('/events.json', function (req, res){
+  Events.find({}, function (err, results){
+    res.json(results)
+  })
+});
+
 
 app.get('/login', function (req, res){
   res.render('login')

@@ -1,3 +1,31 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Poiret+One);
+@import url(https://fonts.googleapis.com/css?family=Amatic+SC:400,700);
+
+header {
+    padding-left: 15px;
+    padding-top: 15px;
+}
+
+h1 {
+    font-family: 'Amatic SC', cursive !important;
+    color: #333333;
+    text-align: center;
+    font-size: 48px !important;
+}
+
+a,
+a:active,
+a:visited {
+  color: #333333  !important;
+  font-family: 'Amatic SC', cursive !important;
+  font-size: 29px !important;
+}
+
+p,
+h3 {
+    font-family: 'Open Sans', sans-serif !important;
+}
+
 .navbar.transparent.navbar-inverse .navbar-inner {
     background: rgba(0,0,0,0.4);
 }
@@ -9,11 +37,6 @@
     -webkit-user-drag: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-}
-
-.about {
-    margin: 0 auto;
-    width: 50%;
 }
 
 .col1 {
@@ -29,6 +52,17 @@
 }
 
 .col2 {
+  padding-left: 70px;
+  display:inline;
+  -webkit-column-count: 1; /* Chrome, Safari, Opera */
+  column-count: 1;
+  -webkit-column-width: 40%; /* Chrome, Safari, Opera */
+  column-width: 40%;
+  max-height: 100%;
+
+}
+
+.col3 {
   float: right;
   padding-left: 70px;
   display:inline;
@@ -36,7 +70,12 @@
   column-count: 1;
   -webkit-column-width: 80%; /* Chrome, Safari, Opera */
   column-width: 80%;
-  max height: 100%;
+  max-height: 100%;
+}
+
+.about {
+  text-align: center;
+  margin: 0 auto;
 }
 
 .thumb {
@@ -61,13 +100,24 @@
     z-index: -100;
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    background: url(public/img/misc/vid-screenshot.png) no-repeat;
+    background: url(public/img/misc/elias-landing.jpg) no-repeat;
     background-size: cover;
     background-color: black;
 }
 
-#shop-pic {
+#sticker {
+    width: 250px;
     display: block;
     margin: 0 auto;
-    width: 70%;
+}
+
+#shop-pic {
+    margin: 0 auto;
+    width: 50%;
+}
+
+#icon {
+  width: 50px;
+  padding-left: 20px;
+  padding-left: 20px;
 }
