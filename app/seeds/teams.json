@@ -1,0 +1,85 @@
+[
+  {
+    "name": "Grant Jensen",
+    "img": [
+      {"src": "grant1.jpg"},
+      {"src": "grant2.jpg"},
+      {"src": "grant3.jpg"},
+      {"src": "grant4.jpg"},
+      {"src": "grant5.jpg"},
+      {"src": "grant6.jpg"}
+    ] 
+  },
+
+  {
+    "name": "Austin Amelio",
+    "img": [
+      {"src": "austin1.jpg"},
+      {"src": "austin2.jpg"},
+      {"src": "austin3.jpg"},
+      {"src": "austin4.jpg"},
+      {"src": "austin5.jpg"},
+      {"src": "austin6.jpg"}
+    ] 
+  },
+
+  {
+    "name": "Elias Bingham",
+    "img": [
+      {"src": "elias1.jpg"},
+      {"src": "elias2.jpg"},
+      {"src": "elias3.jpg"},
+      {"src": "elias4.jpg"},
+      {"src": "elias5.jpg"},
+      {"src": "elias6.jpg"}
+    ] 
+  },
+
+  {
+    "name": "Calvin Millar",
+    "img": [
+      {"src": "calvin1.jpg"},
+      {"src": "calvin2.jpg"},
+      {"src": "calvin3.jpg"},
+      {"src": "calvin4.jpg"},
+      {"src": "calvin5.jpg"},
+      {"src": "calvin6.jpg"}
+    ] 
+  },
+
+  {
+    "name": "Dharam Khalsa",
+    "img": [
+      {"src": "dharam1.jpg"},
+      {"src": "dharam2.jpg"},
+      {"src": "dharam3.jpg"},
+      {"src": "dharam4.jpg"},
+      {"src": "dharam5.jpg"},
+      {"src": "dharam6.jpg"}
+    ] 
+  },
+
+  {
+    "name": "Drew Pickell",
+    "img": [
+      {"src": "drew1.jpg"},
+      {"src": "drew2.jpg"},
+      {"src": "drew3.jpg"},
+      {"src": "drew4.jpg"},
+      {"src": "drew5.jpg"},
+      {"src": "drew6.jpg"}
+    ] 
+  },
+
+  {
+    "name": "Dylan Roy",
+    "img": [
+      {"src": "dylan1.jpg"},
+      {"src": "dylan2.jpg"},
+      {"src": "dylan3.jpg"},
+      {"src": "dylan4.jpg"},
+      {"src": "dylan5.jpg"},
+      {"src": "dylan6.jpg"}
+    ] 
+  }
+]

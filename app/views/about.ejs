@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" ng-app="NoComplyApp">
 <head>
   <title>NO-COMPLY</title>
-  <link rel="stylesheet" href="css/style.css">  
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/team_controller.js"></script>  
 </head>
 <body>
+  <div ng-include="'/partials/header.html'"></div>
   <div class="about">
     <h3>Shop Info</h3>
     <img src="img/shop/shop1.jpg" id="shop-pic" class="user-select">

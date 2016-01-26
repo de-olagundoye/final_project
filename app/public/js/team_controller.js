@@ -9,6 +9,9 @@ function TeamController($scope, $http) {
     $scope.team.forEach(function (team){
       if (team._id === _id) {
         $scope.thisMember = team;
+        $scope.imageArray = team.img
+        
+        console.log($scope.imageArray)
       }
     });
   };

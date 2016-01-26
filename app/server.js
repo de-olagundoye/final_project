@@ -1,6 +1,9 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+mongoose.connect(process.env.MONGOLAB_URI || "mongodb://localhost:27017/myDb")
+
 var Team = require('./models/team');
 var Admin = require('./models/admin');
 var session = require('express-session');
@@ -30,8 +33,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 app.use(methodOverride('_method'));
 
-var mongolabURI = "mongodb://heroku_030635dr:qmfeb33h7jd59e4tpkm2srtfs9@ds049945.mongolab.com:49945/heroku_030635dr"
-var mongoUrl = "mongodb://localhost:27017/myDb"
+var mongoUrl = process.env.MONGOLAB_URI || "mongodb://localhost:27017/myDb"
 
 app.use(session({
   secret: 'charon',
@@ -92,7 +94,8 @@ app.get('/team/:id', function (req, res){
 
 app.patch('/team/:id', function (req, res){
   console.log(req.body.team.img)
-  Team.findOneAndUpdate({_id: req.params.id}, {$set: {name: req.body.team.name}}, {$push: {img: req.body.team.img}}, function (err){
+  Team.findOneAndUpdate({_id: req.params.id}, {$set: {name: req.body.team.name}, $push: {img: {src: req.body.team.img}}}, function (err){
+    console.log(err)
     res.redirect('/admin')
   })
 })
@@ -104,7 +107,7 @@ app.delete('/team/:id', function (req, res) {
   })
 });
 
-app.post('/team', function (req, res){
+app.post('/team', function (req, res){ 
   var team = new Team(req.body.team)
   team.save(function () {
     res.redirect('/admin')
