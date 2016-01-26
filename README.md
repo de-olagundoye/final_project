@@ -9,7 +9,7 @@ User Stories
 
     -Users can check the site for shop info
 
-    -A admin can log in so to edit bio information
+    -An admin can log in so to edit bio information
 
     -As a logged in admin, a user can upload photo 
 
